@@ -3,7 +3,7 @@
 > - This is my minimal Neovim config with Lua.
 
 
-![Screenshot from 2024-01-16 13-39-06](https://github.com/kentlouisetonino/config-neovim-lua/assets/69438999/c7d3e335-674c-4c9f-9b33-fc54e8f9708a)
+![image](https://github.com/yassa9/Simple-Nvim-Lua-Config/assets/69548206/2bc1ee7c-beac-449c-8ba9-722c8ff37aef)
 
 ### Local Setup
 #
@@ -88,11 +88,6 @@ V || Shift + v    : Highlight a line.
 
 ```
 
-<br />
-<br />
-
-
-
 ### Clipboard Setup
 #
 
@@ -101,6 +96,3 @@ V || Shift + v    : Highlight a line.
 ```sh
 sudo apt install xclip
 ```
-
-<br />
-<br />
