@@ -109,3 +109,6 @@ require("plugin_config.git")
 
 -- PYTHON CONFIGURATION
 require("plugin_config.python")
+
+vim.cmd('colorscheme retrobox')
+
