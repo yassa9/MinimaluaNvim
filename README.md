@@ -2,13 +2,8 @@
 #
 > - This is my minimal Neovim config with Lua.
 
-<br />
 
 ![Screenshot from 2024-01-16 13-39-06](https://github.com/kentlouisetonino/config-neovim-lua/assets/69438999/c7d3e335-674c-4c9f-9b33-fc54e8f9708a)
-
-<br />
-<br />
-
 
 ### Local Setup
 #
@@ -32,19 +27,17 @@ nvim init.lua
 :PlugInstall
 ```
 
-<br />
-<br />
-
-
-
 ## Keyboard Commands
 > - General.
+
+```plaintext
 Leader Key                  : <Space>
 Open Terminal (Horizontal)  : <Space>th
 Open Terminal (Vertical)    : <Space>tv
 Escape Splits               : <Space><Space>
 Support for Typst           : :TypstPreview
 Open Telescope find files   : <leader>ff
+```
 
 > - NerdTree basic commands.
 
