@@ -1,6 +1,6 @@
 ### Description
 #
-> - This is my default Neovim config with Lua.
+> - This is my minimal Neovim config with Lua.
 
 <br />
 
@@ -8,7 +8,6 @@
 
 <br />
 <br />
-
 
 
 ### Local Setup
@@ -20,10 +19,10 @@
 cd .config
 
 # Clone the repository.
-git clone git@github.com:kentlouisetonino/config-neovim-lua.git
+git clone git@github.com:yassa9/Simple-Nvim-Lua-Config.git
 
 # Rename the folder.
-mv config-neovim-lua nvim
+mv Simple-Nvim-Lua-Config nvim
 
 # Go the nvim directory and open nvim.
 cd nvim
@@ -39,6 +38,14 @@ nvim init.lua
 
 
 ## Keyboard Commands
+> - General.
+Leader Key                  : <Space>
+Open Terminal (Horizontal)  : <Space>th
+Open Terminal (Vertical)    : <Space>tv
+Escape Splits               : <Space><Space>
+Support for Typst           : :TypstPreview
+Open Telescope find files   : <leader>ff
+
 > - NerdTree basic commands.
 
 ```plaintext
@@ -86,8 +93,6 @@ V || Shift + v    : Highlight a line.
 
 :noh              : Remove the highlights.
 
-F1/f1  : Open a new tab with terminal.
-F2/f2  : Escape the insert mode of terminal.
 ```
 
 <br />
@@ -106,30 +111,3 @@ sudo apt install xclip
 
 <br />
 <br />
-
-
-
-### C/C++ Setup
-#
-
-> - This project uses the `Clang` compiler frontend.
-
-> - This handles as well the `LSP` management support.
-
-> - However, sometimes `clang` cannot find the headers of <br />
-    some libraries. To fix this, put the path of the headers <br />
-    in `.clangd` config. Example below is the path for AVR <br />
-    LibC library.
-
-```sh
-# Go to the home directory.
-cd
-
-# Open the .clangd configuration file.
-nvim .clangd
-
-# Put this inside the .clangd configuration file.
-CompileFlags:
-	Remove: [-Wredefined-macro],
-	Add: [-I/usr/lib/avr/include, -Wno-redefined-macro, -D__AVR_ATmega328P__]
-```
