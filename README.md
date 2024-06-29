@@ -53,6 +53,10 @@ gT    : Switch to previous tab.
 C-t   : Toggle the NERDTree.
 ```
 
+![image](https://github.com/yassa9/Simple-Nvim-Lua-Config/assets/69548206/83410b69-e86f-4e06-a33f-45e6b3b2016f)
+
+
+
 > - Cursor movement basic commands.
 
 ```plaintext
