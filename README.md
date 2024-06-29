@@ -3,7 +3,7 @@
 > - This is my minimal Neovim config with Lua.
 
 
-![image](https://github.com/yassa9/Simple-Nvim-Lua-Config/assets/69548206/2bc1ee7c-beac-449c-8ba9-722c8ff37aef)
+![image](https://github.com/yassa9/Simple-Nvim-Lua-Config/assets/69548206/7db55e8d-acaf-4b9f-abc2-34f12a230c48)
 
 ### Local Setup
 #
@@ -38,6 +38,9 @@ Escape Splits               : <Space><Space>
 Support for Typst           : :TypstPreview
 Open Telescope find files   : <leader>ff
 ```
+
+![image](https://github.com/yassa9/Simple-Nvim-Lua-Config/assets/69548206/ff7bf0db-ab78-437a-96ed-1fd21b70c58b)
+
 
 > - NerdTree basic commands.
 
