@@ -1,0 +1,135 @@
+### Description
+#
+> - This is my default Neovim config with Lua.
+
+<br />
+
+![Screenshot from 2024-01-16 13-39-06](https://github.com/kentlouisetonino/config-neovim-lua/assets/69438999/c7d3e335-674c-4c9f-9b33-fc54e8f9708a)
+
+<br />
+<br />
+
+
+
+### Local Setup
+#
+> - Run the following commands below.
+
+```bash
+# Go to the config directory.
+cd .config
+
+# Clone the repository.
+git clone git@github.com:kentlouisetonino/config-neovim-lua.git
+
+# Rename the folder.
+mv config-neovim-lua nvim
+
+# Go the nvim directory and open nvim.
+cd nvim
+nvim init.lua
+
+# Install the plugins.
+:PlugInstall
+```
+
+<br />
+<br />
+
+
+
+## Keyboard Commands
+> - NerdTree basic commands.
+
+```plaintext
+m     : This bring up the NerdTree Filesystem menu.
+a     : This allows to create a new file.
+d     : This allows to delete a file.
+mm    : This allows renaming a file.
+
+t     : Open a new tab.
+gt    : Switch to next tab.
+gT    : Switch to previous tab.
+C-t   : Toggle the NERDTree.
+```
+
+> - Cursor movement basic commands.
+
+```plaintext
+h   : Move cursor left.
+j   : Move cursor down.
+k   : Move cursor up.
+l   : Move cursor right.
+H   : Move to top of screen.
+M   : Move to middle of screen.
+L   : Move to bottom of screen.
+G   : Move the cursor at the bottom of the page.
+gg  : Move to the top of page.
+
+e   : Jump forwards to the end of a word.
+E   : Jump forwards to the end of a word (Words can contain punctuation).
+w   : Jump forwards to the start of a word.
+W   : Jump forwards to the start of a word (Words can contain puntuation).
+gd  : Go to definition.
+
+C-y : Completion active import.
+C-n : Completion next import.
+C-p : Completion previous import.
+
+r   : Replace a character.
+x   : Delete a character.
+o   : New line below without pressing insert.
+O   : New line above without pressing insert.
+
+V || Shift + v    : Highlight a line.
+>                 : Indent multiple line.
+
+:noh              : Remove the highlights.
+
+F1/f1  : Open a new tab with terminal.
+F2/f2  : Escape the insert mode of terminal.
+```
+
+<br />
+<br />
+
+
+
+### Clipboard Setup
+#
+
+> - To make sure the clipboard works.
+
+```sh
+sudo apt install xclip
+```
+
+<br />
+<br />
+
+
+
+### C/C++ Setup
+#
+
+> - This project uses the `Clang` compiler frontend.
+
+> - This handles as well the `LSP` management support.
+
+> - However, sometimes `clang` cannot find the headers of <br />
+    some libraries. To fix this, put the path of the headers <br />
+    in `.clangd` config. Example below is the path for AVR <br />
+    LibC library.
+
+```sh
+# Go to the home directory.
+cd
+
+# Open the .clangd configuration file.
+nvim .clangd
+
+# Put this inside the .clangd configuration file.
+CompileFlags:
+	Remove: [-Wredefined-macro],
+	Add: [-I/usr/lib/avr/include, -Wno-redefined-macro, -D__AVR_ATmega328P__]
+```
