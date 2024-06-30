@@ -14,10 +14,10 @@
 cd .config
 
 # Clone the repository.
-git clone git@github.com:yassa9/Simple-Nvim-Lua-Config.git
+git clone git@github.com:yassa9/MinimaluaNvim.git
 
 # Rename the folder.
-mv Simple-Nvim-Lua-Config nvim
+mv MinimaluaNvim nvim
 
 # Go the nvim directory and open nvim.
 cd nvim
