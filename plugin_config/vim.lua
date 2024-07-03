@@ -29,6 +29,16 @@ vim.opt.completeopt = vim.opt.completeopt - "preview"
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Enable line wrapping
+vim.o.wrap = true
+-- Show line breaks
+vim.o.linebreak = true
+-- Don't break words
+vim.o.list = false
+
+-- Set text width to 80 characters
+vim.o.textwidth = 80
+
 -- Exit the application.
 vim.api.nvim_set_keymap("n", "<F9>", ":q<CR>", { noremap = true, silent = true })
 

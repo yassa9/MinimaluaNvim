@@ -40,11 +40,12 @@ vim.cmd([[
   Plug 'https://github.com/akinsho/flutter-tools.nvim'
   Plug 'https://github.com/williamboman/mason.nvim'
   Plug 'https://github.com/mhartington/formatter.nvim'
-  Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
   Plug 'https://github.com/chomosuke/typst-preview.nvim', {'tag': 'v0.3.*'}
   Plug 'https://github.com/mg979/vim-visual-multi'
   call plug#end()
 ]])
+
+--   Plug 'https://github.com/neoclide/coc.nvim', {'branch': 'release'}
 
 -- Terminal mappings with leader key
 vim.api.nvim_set_keymap("n", "<Leader>tv", ":botright vnew +term<CR>", { noremap = true, silent = true })
@@ -109,6 +110,4 @@ require("plugin_config.git")
 
 -- PYTHON CONFIGURATION
 require("plugin_config.python")
-
-vim.cmd('colorscheme retrobox')
 
