@@ -31,6 +31,7 @@ vim.cmd([[
   Plug 'https://github.com/hrsh7th/cmp-nvim-lsp'
   Plug 'https://github.com/fatih/vim-go'
   Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'https://github.com/nvim-treesitter/nvim-treesitter-context'
   Plug 'https://github.com/sbdchd/neoformat'
   Plug 'https://github.com/stevearc/dressing.nvim'
   Plug 'https://github.com/akinsho/flutter-tools.nvim'
@@ -42,6 +43,7 @@ vim.cmd([[
   Plug 'https://github.com/mhartington/formatter.nvim'
   Plug 'https://github.com/chomosuke/typst-preview.nvim', {'tag': 'v0.3.*'}
   Plug 'https://github.com/mg979/vim-visual-multi'
+  Plug 'https://github.com/xiyaowong/transparent.nvim'
   call plug#end()
 ]])
 
@@ -65,9 +67,6 @@ require("plugin_config.vim")
 
 -- ARDUINO CONFIGURATION
 require("plugin_config.arduino")
-
--- THEME CONFIGURATION
-require("plugin_config.theme")
 
 -- NERDTREE CONFIGURATION
 require("plugin_config.nerdtree")
@@ -110,4 +109,63 @@ require("plugin_config.git")
 
 -- PYTHON CONFIGURATION
 require("plugin_config.python")
+
+require("plugin_config.theme")
+
+-- Set the background color for Neovim terminal
+vim.api.nvim_set_option('termguicolors', true)
+
+-- Key bindings to resize windows with Shift + Ctrl and arrow keys
+vim.api.nvim_set_keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-S-Up>", ":resize +2<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-S-Down>", ":resize -2<CR>", { noremap = true, silent = true })
+
+
+-- Treesitter configuration
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "cpp", "lua", "python", "javascript", "html", "css" }, -- List the languages you need
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    additional_vim_regex_highlighting = false,
+  },
+  indent = {
+    enable = true
+  },
+  fold = {
+    enable = true,
+    disable = {}, -- List of languages you want to disable the folding for
+  },
+}
+
+-- Enable folding based on Treesitter
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+
+
+-- Treesitter context configuration
+require'treesitter-context'.setup{
+  enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+  throttle = true, -- Throttles plugin updates (may improve performance)
+  max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+  patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
+    default = {
+      'class',
+      'function',
+      'method',
+      -- Add more patterns here
+    },
+  },
+}
+
+
+-- Keybindings for folding
+vim.api.nvim_set_keymap('n', 'za', 'za', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'zo', 'zo', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'zc', 'zc', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'zM', 'zM', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'zR', 'zR', { noremap = true, silent = true })
+
+
+
 
