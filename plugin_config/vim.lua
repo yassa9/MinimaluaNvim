@@ -2,22 +2,22 @@
 vim.opt.number = true
 
 -- Auto indent new lines.
-vim.opt.autoindent = true
+-- vim.opt.autoindent = true
 
 -- Use spaces instead of tabs.
 vim.opt.expandtab = true
 
 -- Set tab width to 2 spaces.
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
 
 -- Indent by 2 spaces.
-vim.opt.shiftwidth = 2
+vim.opt.shiftwidth = 4
 
 -- Use smartt tabs.
 vim.opt.smarttab = true
 
 -- Set soft tab stop to 2 spaces.
-vim.opt.softtabstop = 2
+vim.opt.softtabstop = 4
 
 -- Enable mouse support in all nodes.
 vim.opt.mouse = "a"
@@ -30,14 +30,17 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Enable line wrapping
-vim.o.wrap = true
+-- vim.o.wrap = true
 -- Show line breaks
-vim.o.linebreak = true
+-- vim.o.linebreak = true
 -- Don't break words
 vim.o.list = false
 
 -- Set text width to 80 characters
-vim.o.textwidth = 80
+-- vim.o.textwidth = 80
+
+-- Set foldlevel to open all folds by default
+vim.o.foldlevel = 99
 
 -- Exit the application.
 vim.api.nvim_set_keymap("n", "<F9>", ":q<CR>", { noremap = true, silent = true })
